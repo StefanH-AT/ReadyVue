@@ -6,22 +6,33 @@
 
 <script lang="ts" setup>
 
-const props = defineProps<{
-  limit: {
-    required: false,
-    type: Number,
-    default: 10,
-  },
-  space: {
-    required: false,
-    type: String,
-    default: "",
-  },
-  threshold: {
-    required: true,
-    type: Number,
-  },
-}>()
+interface SwitcherProps {
+  limit?: number,
+  space?: string,
+  threshold: string
+}
+
+const props = withDefaults(defineProps<SwitcherProps>(), {
+  limit: 10,
+  space: ""
+});
+
+// const props = defineProps<{
+//   limit: {
+//     required: false,
+//     type: number,
+//     default: 10,
+//   },
+//   space: {
+//     required: false,
+//     type: string,
+//     default: "",
+//   },
+//   threshold: {
+//     required: true,
+//     type: string,
+//   },
+// }>()
 </script>
 
 <style>
